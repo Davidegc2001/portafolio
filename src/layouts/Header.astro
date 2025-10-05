@@ -1,0 +1,65 @@
+---
+import logo from "../assets/logo.png";
+const itemMenu = [
+    {
+        label: "Sobre mí",
+        href: "/#about",
+    },
+    {
+        label: "Experiencia",
+        href: "/#experiencia",
+    },
+    {
+        label: "Estudios",
+        href: "/#estudios",
+    },
+    {
+        label: "Habilidades",
+        href: "/#habilidades",
+    },
+    {
+        label: "Proyectos",
+        href: "/#proyectos",
+    },
+
+    {
+        label: "Contacto",
+        href: "/#contacto",
+    },
+];
+---
+
+<header
+    class="fixed top-0 w-full z-10 transition-all duration-300 glass-card md:px-6"
+>
+    <nav
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        class="flex justify-around items-center py-3"
+    >
+        <div class="text-xl font-extrabold tracking-tight text-white">
+            <a href="/" class="logo"> David Guilarte Correa</a>
+        </div>
+        <ul class="flex gap-x-7">
+            {
+                itemMenu.map((item) => (
+                    <li class="text-gray-300 font-bold   ">
+                        <a
+                            class=" hover:text-amber-300 transition-all duration-500"
+                            href={item.href}
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .glass-card {
+        background-color: (--glass / 0.6);
+        backdrop-filter: blur(6px);
+    }
+</style>

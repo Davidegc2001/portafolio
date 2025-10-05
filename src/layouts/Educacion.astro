@@ -1,0 +1,24 @@
+---
+import Cards from "../components/ui/Cards.astro";
+import { profile } from "../data/profile";
+const { headerStyles, sectionStyles } = Astro.props;
+---
+
+<section id="estudios" class={headerStyles}>
+    <h3 data-aos="fade-up" data-aos-delay="600" class={sectionStyles}>
+        Educación y Formación
+    </h3>
+    <div class="flex flex-col lg:flex-row justify-center px-10 pb-10">
+        {
+            profile.estudios.map((study) => (
+                <Cards
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                    institution={study.institucion}
+                    period={study.period}
+                    degree={study.degree}
+                />
+            ))
+        }
+    </div>
+</section>

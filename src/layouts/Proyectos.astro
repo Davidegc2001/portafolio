@@ -1,0 +1,24 @@
+---
+import { profile } from "../data/profile";
+const { headerStyles, sectionStyles } = Astro.props;
+import CardProjects from "../components/ui/CardProjects.astro";
+---
+
+<section id="proyectos" class={headerStyles}>
+    <h3 data-aos="fade-up" data-aos-delay="600" class={sectionStyles}>
+        Proyectos Destacados
+    </h3>
+    <div class="flex justify-center my-10 gap-6 pb-10">
+        {
+            profile.projects.map((project) => (
+                <CardProjects
+                    name={project.name}
+                    description={project.description}
+                    tecnology={project.tecnology}
+                    date={project.date}
+                    link={project.link}
+                />
+            ))
+        }
+    </div>
+</section>

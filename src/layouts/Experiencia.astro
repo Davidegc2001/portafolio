@@ -1,0 +1,60 @@
+---
+import Icon from "../components/icons/briefcase.svg";
+import { profile } from "../data/profile";
+const skills = profile.experiencia;
+const { headerStyles, sectionStyles } = Astro.props;
+---
+
+<section id="experiencia" class={sectionStyles} "w-full">
+    <h3 data-aos="fade-up" data-aos-delay="600" class={headerStyles}>
+        Experiencia laboral
+    </h3>
+
+    {
+        profile.experiencia.map((job, index) => (
+            <div class=" container  max-w-4xl mx-auto px-6 md:px-4">
+                <div class="relative flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <>
+                            <div
+                                class="flex h-[18px] w-[18px] rounded-full border border-purple-500/50 bg-background dark:bg-muted z-10"
+                                style="transform: none;"
+                            />
+                            <div
+                                class="w-px  grow bg-gradient-to-b from-purple-500/50 to-pink-500/30 dark:from-purple-500/30 dark:to-pink-500/10"
+                                style="height: 100%;"
+                            />
+                        </>
+                    </div>
+                    <div class=" flex justify-center items-center  ml-6 mt-4 ">
+                        <div data-aos="fade-up" data-aos-delay="600">
+                            <h3 class="text-amber-300 font-bold my-1.5">
+                                👨‍💻 {job.role}
+                            </h3>
+
+                            <h5 class="text-blue-400 my-1.5">
+                                🖥️ {job.company}
+                            </h5>
+                            <p class="text-gray-300  font-medium my-1.5">
+                                🗓️{job.period}
+                            </p>
+                            <div class="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-purple-500/20 dark:bg-card/10 dark:border-purple-500/10 shadow-sm">
+                                <div class="  border-purple-500/50 flex pb-2 ">
+                                    <img
+                                        class="size-9 px-1 text-white bg-amber-400 rounded-full"
+                                        src={Icon.src}
+                                        alt=" icon-portfolio"
+                                    />
+                                    <strong class="text-amber-100 ml-4">
+                                        Logros claves
+                                    </strong>
+                                </div>
+                                <p class="text-gray-300">{job.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</section>

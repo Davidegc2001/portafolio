@@ -1,0 +1,34 @@
+---
+const { institution, degree, period } = Astro.props;
+
+import Study from "../icons/Study.astro";
+import StudyIcon from "../icons/Study.astro";
+---
+
+<div
+    data-aos="fade-right"
+    class="glass-card p-6 rounded-2xl shadow-md transition-transform duration-200 hover:-translate-y-1"
+>
+    <div class="flex gap-4 items-center">
+        <div class="bg-amber-300 rounded-full p-3">
+            <Study />
+        </div>
+        <div class="texto text-left">
+            <h4 class="text-white text-xl font-bold">{degree}</h4>
+            <p class="text-gray-300 text-[14px] pt-2">{institution}</p>
+            <p class="text-gray-400 text-[17px]">{period}</p>
+        </div>
+    </div>
+</div>
+<style>
+    .dark {
+        --bg: 17 24 39;
+        --muted: 148 163 184;
+        --glass: 17 24 39;
+    }
+
+    .glass-card {
+        background-color: (--glass / 0.6);
+        backdrop-filter: blur(6px);
+    }
+</style>

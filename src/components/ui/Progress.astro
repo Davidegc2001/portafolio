@@ -1,0 +1,22 @@
+---
+const { tecnology, level } = Astro.props;
+---
+
+<div data-aos="fade-up" data-aos-delay="600" class="flex justify-center">
+    <div class="w-2/4">
+        <div class="flex justify-between">
+            <label for={tecnology} class="text-gray-300"> {tecnology} </label>
+            <span class="text-blue-400">{level}%</span>
+        </div>
+        <div class="rounded-full">
+            <progress
+                class="w-full rounded-lg text-amber-400!"
+                id={tecnology}
+                max="100"
+                ,
+                value={level}
+            >
+            </progress>
+        </div>
+    </div>
+</div>

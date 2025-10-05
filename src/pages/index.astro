@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../layouts/About.astro";
+import Experiencia from "../layouts/Experiencia.astro";
+import Educacion from "../layouts/Educacion.astro";
+import Habilidades from "../layouts/Habilidades.astro";
+import Proyectos from "../layouts/Proyectos.astro";
+import Header from "../layouts/Header.astro";
+import Navbar from "../layouts/Navbar.astro";
+import Contacto from "../layouts/Contacto.astro";
+import Footer from "../layouts/Footer.astro";
+import "aos/dist/aos.css";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <main class="">
+        <div class="hidden md:block">
+            <Header />
+        </div>
+        <div class="md:hidden">
+            <Navbar />
+        </div>
+        <About />
+        <Experiencia
+            sectionStyles={" bg-gray-800  flex-col justify-center py-20"}
+            headerStyles={"text-white  font-bold text-3xl lg:text-4xl text-center pb-16"}
+        />
+        <Educacion
+            sectionStyles={"bg-[rgb(31 41 55 / 1)] h-1/2 py-20"}
+            headerStyles={"text-white  font-bold  text-3xl lg:text-4xl text-center"}
+        />
+        <Habilidades
+            sectionStyles={"bg-gray-800 py-20  "}
+            headerStyles={"text-white  font-bold text-3xl lg:text-4xl text-center py-5"}
+        />
+        <Proyectos
+            sectionStyles={"bg-[rgb(31 41 55 / 1)] py-20 px-10"}
+            headerStyles={"text-white  font-bold  text-3xl lg:text-4xl text-center"}
+        />
+        <Contacto
+            sectionStyles={"bg-gray-800  py-20"}
+            headerStyles={"text-white text-center   text-3xl font-bold lg:text-4xl "}
+        />
+
+        <Footer />
+    </main>
+</Layout>
+<script>
+    // [!code ++] // [!code focus]
+    import AOS from "aos"; // [!code ++] // [!code focus]
+    AOS.init(); // [!code ++] // [!code focus]
+</script>
